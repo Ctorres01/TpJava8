@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java8.data.Data;
 import java8.data.Person;
-import junit.framework.Assert;
 
 /**
  * Exercice 02 - Redéfinition
