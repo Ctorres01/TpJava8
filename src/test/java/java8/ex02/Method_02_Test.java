@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java8.data.Data;
 import java8.data.Person;
+import junit.framework.Assert;
 
 /**
  * Exercice 02 - Redéfinition
@@ -17,16 +18,12 @@ public class Method_02_Test {
         List<Person> findAll();
         
         default int countPersons() {
-			int counter = 0;
-			for(Person p : findAll()) {
-				counter++;
-			}
-			return counter;
+			return findAll().size();
 		}
         
         default String format() {
         	StringBuilder stringBuilder = new StringBuilder();
-        	stringBuilder.append("[").append(countPersons()).append("persons]");
+        	stringBuilder.append("[").append(countPersons()).append(" persons]");
 			return stringBuilder.toString();
         }
     }
@@ -46,21 +43,18 @@ public class Method_02_Test {
         @Override
         public String format() {
         	StringBuilder stringBuilder = new StringBuilder();
-        	stringBuilder.append(this.getClass().getName()).append(IDao.super.format());
-			return null;
+        	stringBuilder.append(this.getClass().getSimpleName()).append(IDao.super.format());
+			return stringBuilder.toString();
         }
 
     }
     // end::DaoA[]
 
-    @Test
+	@Test
     public void test_daoA_format() throws Exception {
 
         DaoA daoA = new DaoA();
-
-        String result = null;
-        result = daoA.format();
-
-        "DaoA[20 persons]".equals(result);
+         String result = daoA.format();
+         assert(result.equals("DaoA[20 persons]"));
     }
 }
