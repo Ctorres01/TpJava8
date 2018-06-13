@@ -10,6 +10,11 @@ public class Account {
     	this.owner = owner;
     	this.balance =  DEFAULT_SOLDE;
     }
+    
+    public Account(Person owner, int solde) {
+    	this.owner = owner;
+    	this.balance = solde;
+    }
 
     public Person getOwner() {
         return owner;
