@@ -34,7 +34,7 @@ public class Stream_01_Test {
 
         Boolean result1 = pizzas.stream().anyMatch(p -> p.getPrice()>=1300);
 
-        // TODO valider si au moins une pizza à un prix >= 2000
+        // valider si au moins une pizza à un prix >= 2000
         Boolean result2 = pizzas.stream().anyMatch(p -> p.getPrice()>=2000);
 
         assertThat(result1, is(true));
@@ -46,10 +46,10 @@ public class Stream_01_Test {
 
         List<Pizza> pizzas = new Data().getPizzas();
 
-        // TODO valider que toutes les pizzas ont un prix >= 1300
+        // valider que toutes les pizzas ont un prix >= 1300
         Boolean result1 = pizzas.stream().allMatch(p -> p.getPrice()>=1300);
 
-        // TODO valider que toutes les pizzas ont un prix >= 900
+        // valider que toutes les pizzas ont un prix >= 900
         Boolean result2 = pizzas.stream().allMatch(p -> p.getPrice()>=900);
 
         assertThat(result1, is(false));
@@ -62,7 +62,7 @@ public class Stream_01_Test {
 
         List<Pizza> pizzas = new Data().getPizzas();
 
-        // TODO valider qu'aucune pizza n'a un prix >= 2000
+        // valider qu'aucune pizza n'a un prix >= 2000
         Boolean result1 = pizzas.stream().noneMatch(p -> p.getPrice()>=2000);
 
         assertThat(result1, is(true));
@@ -105,7 +105,7 @@ public class Stream_01_Test {
 
         List<Pizza> pizzas = new Data().getPizzas();
 
-        // TODO Trouver la pizza la moins chère dont le prix est >= 950
+        // Trouver la pizza la moins chère dont le prix est >= 950
         Optional<Pizza> result = pizzas.stream().filter(p -> p.getPrice()>=950).min(Comparator.comparing(Pizza::getPrice));
 
         assertThat(result.isPresent(), is(true));
