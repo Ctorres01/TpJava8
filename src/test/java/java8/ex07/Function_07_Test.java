@@ -2,6 +2,7 @@ package java8.ex07;
 
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.function.IntBinaryOperator;
 
 /**
@@ -29,6 +30,9 @@ public class Function_07_Test {
 
     @Test
     public void test_format_subtract() throws Exception {
+    	LocalDate d = LocalDate.now();
+    	d.withYear(2018);
+    	System.out.println(d);
 
         String result = format(2, 3, "-", substract);
 
