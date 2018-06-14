@@ -26,7 +26,7 @@ public class Function_06_Test {
 
     @Test
     public void test_supplier_formatAge() throws Exception {
-        String result = formatAge(() -> new Person("Bob", "Ross", 35, "geniusPainter"));
+        String result = formatAge(() -> new Person("Bob", "Ross", 35, "joyOfPainting"));
 
         assert result.equals("[age=35]");
     }
