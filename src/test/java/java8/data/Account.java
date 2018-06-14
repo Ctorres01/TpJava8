@@ -4,8 +4,19 @@ public class Account {
 
     private Person owner;
     private Integer balance;
+    public static final int DEFAULT_BALANCE = 1000;
 
-    public Person getOwner() {
+    public Account(Person p, int i) {
+		this.owner = p;
+		this.balance = i;
+	}
+    
+    public Account(Person p) {
+		this.owner = p;
+		this.balance = DEFAULT_BALANCE;
+	}
+
+	public Person getOwner() {
         return owner;
     }
 
